@@ -10,10 +10,17 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
   end
 
-  #def send_page
-  #	flash[:notice] = "Page sent!"
-  #	puts "Page Sent!"
-  #end
+  def send_page
+
+
+
+  	flash[:notice] = "Page sent!"
+  	puts "=================="
+    puts "=   Page Sent!   ="
+    puts "=================="
+
+    redirect_to action: 'index'
+  end
 
 
 private
@@ -21,5 +28,6 @@ private
     def set_user
       @user = User.find(params[:id])
     end
+
 
 end
