@@ -17,7 +17,7 @@
           <tr>
             <td><%= link_to user.email, user %></td>
             <td><%= user.phone %>
-            <td><%= link_to 'Page', send_page_path, class: "btn btn-default", method: :post%></td>
+            <td><%= link_to 'Page', user_send_page_path(user), class: "btn btn-default", method: :post%></td>
           </tr>
         <% end %>
       </tbody>

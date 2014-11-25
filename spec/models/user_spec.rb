@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe User, :type => :model do
+  it "has a valid factory" do
+  	@user = FactoryGirl.create(:user)
+  	expect(@user).to be_valid
+  end
+
+
   pending "add some examples to (or delete) #{__FILE__}"
 end
