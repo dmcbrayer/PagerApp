@@ -14,8 +14,20 @@ class UsersController < ApplicationController
   def send_page
 
     @user = User.find(params[:user_id])
+    @recipient = '+1' + @user.phone
+    @name = @user.full_name
 
-  	flash[:notice] = "Page sent to #{@user.first_name}!"
+    #Twilio actions
+    @client = Twilio::REST::Client.new
+
+    @client.account.messages.create({
+      :from => '+16785828610', 
+      :to => @recipient, 
+      :body => 'Hey there ' + @name,  
+    })
+
+
+  	flash[:notice] = "Page sent to #{@user.full_name}!"
   	puts "=================="
     puts "=   Page Sent!   ="
     puts "=================="
