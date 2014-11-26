@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     @client.account.messages.create({
       :from => '+16785828610', 
       :to => @recipient, 
-      :body => 'Hey there ' + @name,  
+      :body => 'Hey there ' + @name  
     })
 
 
