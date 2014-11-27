@@ -7,3 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 7.times {FactoryGirl.create(:user)}
+
+User.create(email: "dmcbrayer@gmail.com", password: "password", password_confirmation: "password", phone: "2054227764", first_name: "Daniel", last_name: "McBrayer")
+
+Organization.create([{name: "Shelby Medical Center", variety: "Hospital"}, {name: "Trinity Medical Center", variety: "Hospital"},{name: "Fair Haven", variety: "Nursing Home"},{name: "Lakeshore", variety: "Rehabilitation Center"}])
