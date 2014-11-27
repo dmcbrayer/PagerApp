@@ -2,6 +2,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* mixins */
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 // make all images responsive by default
 img {
   @extend .img-responsive;
@@ -44,3 +51,12 @@ section {
   @extend .row;
   margin-top: 20px;
   }
+
+/* debug */
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
