@@ -2,6 +2,6 @@
 
 <ul>
   <% @organizations.each do |org| %>
-    <li><%= org.name %></li>
+    <li><%= link_to org.name, org %></li>
   <% end %>
 </ul>

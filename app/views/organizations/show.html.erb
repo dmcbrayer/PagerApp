@@ -1,1 +1,17 @@
-<h1>Users#show</h1>
+<h1><%= @organization.name %></h1>
+<p><strong>Type: </strong><%= @organization.variety %></p>
+
+<p><strong>Members:</strong>
+  <% if @organization.users.any? %>
+    <ul>
+      <% @organization.users.each do |user| %>
+        <li><%= link_to user.full_name, user %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>This organization does not have any members.</p>
+  <% end %>
+</p>
+
+<p><%= link_to 'Edit Organization', edit_organization_path %> | <%= link_to 'Delete Organization', organization_path, data: { confirm: "Are you sure?" }, method: :delete %></p>
+

@@ -1,6 +1,6 @@
 <h1>Organizations#edit</h1>
 
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Edit <%= @organization.name %></h2>
 
 <%= simple_form_for(@organization) do |f| %>
   <%= f.error_notification %>
@@ -16,7 +16,5 @@
     <%= f.button :submit, "Update" %>
   </div>
 <% end %>
-
-<p>U <%= link_to "Delete Organization", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
