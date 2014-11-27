@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def show
-  	
+  	@organizations = @user.organizations
   end
 
   def send_page

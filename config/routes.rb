@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   	post 'send_page' => 'users#send_page' 
   end
 
+  resources :organizations
+
   
 
   root to: 'visitors#index'
