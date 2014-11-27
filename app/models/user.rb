@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 
+  has_many :org_users
+  has_many :organizations, :through => :org_users
+
+
   def full_name
   	full_name = self.first_name + " " + self.last_name
   end
