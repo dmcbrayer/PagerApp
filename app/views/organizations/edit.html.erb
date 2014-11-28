@@ -10,6 +10,13 @@
     <%= f.input :name, required: true, autofocus: true %>
     <%= f.input :variety, required: true %>
 
+    <ul>
+      <% @users.each do |user| %>
+        <li><%= check_box_tag "organization[user_ids][]", user.id, @organization.users.include?(user) %>
+        <%= user.full_name %></li>
+      <% end %>
+    </ul>
+
   </div>
 
   <div class="form-actions">

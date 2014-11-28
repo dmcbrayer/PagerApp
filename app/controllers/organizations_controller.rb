@@ -28,13 +28,17 @@ class OrganizationsController < ApplicationController
 	end
 
 	def edit
+	  @users = User.all
 	end
 
 	def update
-	  @organization = Organization.update(org_params)
+	  @users = User.all
+
+	  #set the params of the user_ids to an empty array if nothing is already there.
+	  params[:organization][:user_ids] ||= []
 
 	  respond_to do |format|
-	  	if @organization.save
+	  	if @organization.update(org_params)
 	  	  format.html {redirect_to @organization, notice: 'Organization information successfully updated.'}
 	  	else
 	  	  format.html {render action: 'edit'}
@@ -59,7 +63,7 @@ class OrganizationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def org_params
-      params.require(:organization).permit(:name, :variety)
+      params.require(:organization).permit(:name, :variety, {:user_ids =>[]})
     end
 
 end
