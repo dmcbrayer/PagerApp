@@ -6,3 +6,17 @@ This web application was created with
 from the <%= link_to('RailsApps project', 'http://railsapps.github.io/') %>.
 </p>
 <p>It's an attempt to create a paging application that uses Parse integration.</p>
+
+<p>What's going to happen right here is I'm going to test out some jquery.</p>
+<button class="btn btn-default jquery-test">Click me</button>
+<div id="showy" style="display: none;">Something</div>
+
+<button type="button" class="btn btn-lg btn-danger has-popover" data-toggle="popover" title="Popover title" data-placement="left" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+
+<script>
+	$(document).ready(function(){
+		$('.jquery-test').click(function(){
+		  $('#showy').slideToggle('slow');
+		});
+	});
+</script>
