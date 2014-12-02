@@ -17,10 +17,12 @@
           <tr>
             <td><%= link_to user.full_name, user %></td>
             <td><%= user.phone %>
-            <td><%= link_to "Click me", "#", class: "btn btn-lg btn-danger has-popover", "title" => "Popover title", "data-toggle" => "popover", "data-placement" => "left", "data-content" => "#{render partial:'layouts/message_form', locals: {recipient: user.id}}", "data-html" => "true" %></td>
+            <td><%= link_to "Click me", "#", class: "btn btn-lg btn-danger has-popover popover-dismiss", "onclick" => "return false;", "title" => "Send a brief message", "data-toggle" => "popover", "data-placement" => "left", "data-content" => "#{render partial:'layouts/message_form', locals: {recipient: user.id}}", "data-html" => "true" %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
    </div>
 </div>
+
+

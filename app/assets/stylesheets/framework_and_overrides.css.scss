@@ -52,6 +52,15 @@ section {
   margin-top: 20px;
   }
 
+//popover settings
+.popover{
+  width: 600px;
+  textarea{
+    width: 100%;
+    resize: none;
+  }
+}
+
 /* debug */
 .debug_dump {
   clear: both;
