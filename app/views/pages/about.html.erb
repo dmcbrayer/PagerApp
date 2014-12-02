@@ -11,7 +11,9 @@ from the <%= link_to('RailsApps project', 'http://railsapps.github.io/') %>.
 <button class="btn btn-default jquery-test">Click me</button>
 <div id="showy" style="display: none;">Something</div>
 
-<button type="button" class="btn btn-lg btn-danger has-popover" data-toggle="popover" title="Popover title" data-placement="left" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+
+
+<%= link_to "Click me", "#", class: "btn btn-lg btn-danger has-popover", "title" => "Popover title", "data-toggle" => "popover", "data-placement" => "right", "data-content" => "#{render 'layouts/message_form'}", "data-html" => "true" %>
 
 <script>
 	$(document).ready(function(){

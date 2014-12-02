@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :org_users
   has_many :organizations, :through => :org_users
+  has_many :messages
 
 
   def full_name

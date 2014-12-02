@@ -1,0 +1,12 @@
+<%= simple_form_for @message, url: user_messages_path(current_user.id), method: :post do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :content, autofocus: true %>
+    <%= f.hidden_field :recipient, :value => recipient %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Send" %>
+  </div>
+<% end %>

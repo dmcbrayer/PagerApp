@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def index
   	@users = User.all
+    @message = current_user.messages.new
   
   end
 
@@ -12,7 +13,6 @@ class UsersController < ApplicationController
   end
 
   def send_page
-
     @recipient_user = User.find(params[:user_id])
     @recipient_number = '+1' + @recipient_user.phone
     @recipient_name = @recipient_user.full_name
@@ -31,12 +31,13 @@ class UsersController < ApplicationController
     })
 
     #confirmation feedback kind of stuff
-  	flash[:notice] = "Page sent to #{@recipient_user.full_name}!"
-  	puts "=================="
+    flash[:notice] = "Page sent to #{@recipient_user.full_name}!"
+    puts "=================="
     puts "=   Page Sent!   ="
     puts "=================="
 
-    redirect_to action: 'index'
+    redirect_to controller: 'users'
+
   end
 
 
