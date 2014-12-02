@@ -1,24 +1,10 @@
 <% content_for :title do %>About<% end %>
 <h3>About the Website</h3>
 <p>
-This web application was created with
-<%= link_to('Rails Composer', 'http://railsapps.github.io/rails-composer/') %>
-from the <%= link_to('RailsApps project', 'http://railsapps.github.io/') %>.
+	This web application was created with
+	<%= link_to('Rails Composer', 'http://railsapps.github.io/rails-composer/') %>
+	from the <%= link_to('RailsApps project', 'http://railsapps.github.io/') %>.
 </p>
 <p>It's an attempt to create a paging application that uses Parse integration.</p>
 
-<p>What's going to happen right here is I'm going to test out some jquery.</p>
-<button class="btn btn-default jquery-test">Click me</button>
-<div id="showy" style="display: none;">Something</div>
 
-
-
-<%= link_to "Click me", "#", class: "btn btn-lg btn-danger has-popover", "title" => "Popover title", "data-toggle" => "popover", "data-placement" => "right", "data-content" => "#{render 'layouts/message_form'}", "data-html" => "true" %>
-
-<script>
-	$(document).ready(function(){
-		$('.jquery-test').click(function(){
-		  $('#showy').slideToggle('slow');
-		});
-	});
-</script>
